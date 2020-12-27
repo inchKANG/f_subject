@@ -24,6 +24,10 @@
     .item_image_list {
       flex-direction: row !important;
       margin: 0 auto !important;
+      // padding-top: margin;
+      // flex-shrink: 30;
+      width: 100% !important;
+      min-height: 200px;
       //   display: none !important;
     }
   }

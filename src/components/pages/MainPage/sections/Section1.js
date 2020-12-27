@@ -1,17 +1,22 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { MainActions } from '../../../../redux/actionCreators';
 
 function Section1() {
+  const state = useSelector((state) => state.main);
+  const { currentProduct } = state;
+
   return (
     <section className="main_section1">
       <div className="container">
-        <div className="item_category">Men Running Shoe</div>
+        <div className="item_category">{currentProduct.category}</div>
         {/* 아이템 정보부분. */}
         <div className="item_info">
           <div className="info_left">
             <h1 className="item_name" title="Nike Joyride Run FlyKint">
-              Nike Joyride Run FlyKint
+              {currentProduct.name}
             </h1>
-            <p className="item_price">$180</p>
+            <p className="item_price">{`$${currentProduct.price}`}</p>
             <div>
               <button className="cart_btn">Add To Cart</button>
             </div>
@@ -23,21 +28,24 @@ function Section1() {
               <div className="background"></div>
               <img
                 className="selected_img"
-                src="statics/Image_en.png"
+                src={currentProduct.defaultImage}
                 alt="images"
               ></img>
             </div>
 
             <div className="item_image_list">
-              <div>
-                <img src="statics/Image_ej.png" alt="images" />
-              </div>
-              <div>
-                <img src="statics/Image_ek.png" alt="images" />
-              </div>
-              <div>
-                <img src="statics/image_el.png" alt="images" />
-              </div>
+              {currentProduct.images.map((v, i) => (
+                <div className="image_wrapper">
+                  <img
+                    className="list_img"
+                    src={v}
+                    alt="images"
+                    onMouseOver={() => {
+                      MainActions.changeProductImageAction(i);
+                    }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
