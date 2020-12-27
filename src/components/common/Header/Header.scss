@@ -1,0 +1,145 @@
+@import '../../../variables.scss';
+
+@media screen and (max-width: $mobileWidth) {
+  header {
+    .navbar_right,
+    .navbar_left {
+      display: none !important;
+    }
+    .mobile_menu {
+      display: block !important;
+    }
+  }
+}
+
+.scroll_top {
+  // visibility: visible;
+  padding: 10px;
+  opacity: 0.7;
+  position: fixed;
+  z-index: 1;
+  bottom: 20px;
+  right: 20px;
+  transition: all 0.5s;
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+header {
+  background: #f1f1f1;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  // width: 100%;
+  z-index: 10;
+  transition: ease-in-out 0.5s;
+
+  // .header_container {
+  //   position: fixed;
+  //   background-color: red;
+  //   left: 0;
+  //   right: 0;
+  // }
+
+  &.scrolled {
+    background: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  }
+
+  #navicon {
+    cursor: pointer;
+  }
+
+  #navicon_close {
+    padding-left: 10px;
+    cursor: pointer;
+  }
+
+  .navbar_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    max-width: $maxWidth;
+    margin: 0 auto;
+    align-items: center;
+    padding: 0 10px;
+    line-height: 8rem;
+    flex-wrap: wrap;
+
+    a {
+      color: #151517;
+      &:hover {
+        font-weight: bold;
+        transition: ease-in-out 0.2s;
+      }
+    }
+    span {
+      padding-right: 30px;
+    }
+    .logo {
+      font-size: 1.375rem;
+      font-weight: bold;
+      padding-right: 35px;
+    }
+
+    .navbar_left {
+    }
+    .navbar_right {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .mobile_menu {
+      margin-left: auto;
+      display: none;
+    }
+  }
+
+  .mobile_menu_items {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    right: -330px;
+    top: 0;
+    z-index: 1;
+    width: 320px;
+
+    @media screen and (max-width: 320px) {
+      width: 100%;
+    }
+
+    transition: all 0.5s ease-in-out;
+    .item_container {
+      padding: 10px;
+      margin: 0 auto;
+      position: relative;
+    }
+    a {
+      display: block;
+      border-bottom: 1px solid #ededed;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      line-height: 39px;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+
+    &.active {
+      right: 0;
+      z-index: 999;
+    }
+  }
+}

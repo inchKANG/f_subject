@@ -1,0 +1,26 @@
+$yellow: #ffa900;
+$blue: #4d66ff;
+$gray: #676767;
+$background: #f1f1f1;
+
+$maxWidth: 1280px;
+$mobileWidth: 768px;
+
+//scss 변수는 반응형에 사용 불가. css변수 사용.
+:root {
+  --rootFontSize: 16px;
+}
+
+// $MaxWidth: 500px;
+@media screen and (max-width: 1280px) {
+  :root {
+    --rootFontSize: 14px;
+  }
+  /* 모바일에 사용될 스트일 시트를 여기에 작성합니다. */
+}
+
+@media screen and (max-width: 900px) {
+  :root {
+    --rootFontSize: 12px;
+  }
+}

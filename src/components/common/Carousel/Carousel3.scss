@@ -1,0 +1,41 @@
+.carousel_container {
+  width: 100vw;
+  position: relative;
+
+  &:hover {
+    transition: all 1s;
+
+    button {
+      visibility: visible;
+    }
+  }
+
+  button {
+    all: unset;
+    padding: 0 1rem;
+    visibility: hidden;
+    position: absolute;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+  .before_btn {
+    left: 10px;
+    top: 45%;
+  }
+
+  .next_btn {
+    right: 10px;
+    top: 45%;
+  }
+
+  .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+
+    .carousel_item {
+      margin: 1rem;
+    }
+  }
+}

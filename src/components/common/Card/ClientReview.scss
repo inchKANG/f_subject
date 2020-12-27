@@ -1,0 +1,46 @@
+@import '../../../variables.scss';
+
+.client_review_wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 300px;
+  border-radius: 1rem;
+  background: #ffffff;
+  padding: 40px 30px;
+  p {
+    margin: 0;
+  }
+
+  .profile_img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: gray;
+    object-fit: cover;
+  }
+
+  .user_review {
+    font-size: 1.125rem;
+    margin: 1.2rem 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .user_name {
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+  .user_job {
+    color: $gray;
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    background: #c5cae9;
+    transition: ease-in-out 0.2s;
+  }
+}
